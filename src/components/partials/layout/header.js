@@ -1,36 +1,29 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * Header Component
  */
 
-import React from 'react';
-import {
-    StyleSheet,
-    View,
-    Text,
-} from 'react-native';
-
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 const Header = () => {
-    return (
-        <View style={styles.header}>
-            <Text> hrasas </Text>
-        </View>
-    );
+  return (
+    <View style={styles.headerBlock}>
+      <Text style={styles.headerText}>React Native Test App</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-
-    header: {
-        width: '100%',
-        height: 50,
-        borderWidth: 1,
-        borderColor: "red",
-    },
-
+  headerBlock: {
+    width: "100%",
+    height: 50,
+    paddingTop: 10,
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
 });
 
 export default Header;

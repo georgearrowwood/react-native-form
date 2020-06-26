@@ -8,66 +8,7 @@
 
 // import React from 'react';
 //
-import Layout from "../../partials/layout";
-//
-// import {
-//     StyleSheet,
-//     ScrollView,
-//     View,
-//     Text,
-// } from 'react-native';
-//
-// import {
-//     Colors,
-// } from 'react-native/Libraries/NewAppScreen';
-//
-//
-// import InputTextL from '../../partials/input-text-label';
-// import Button from '../../partials/button';
-//
-// const App: () => React$Node = () => {
-//     return (
-//         <Layout>
-//
-//             <ScrollView
-//                 contentInsetAdjustmentBehavior="automatic"
-//                 style={styles.scrollView}>
-//
-//
-//                 <View style={styles.body}>
-//                     <View style={styles.sectionContainer}>
-//                         <Text style={styles.sectionTitle}>Step One</Text>
-//                         <Text style={styles.sectionDescription}>
-//                             asdasdasda1
-//                         </Text>
-//                     </View>
-//                     <View style={styles.sectionContainer}>
-//                         <Text style={styles.sectionTitle}>See Your Changes</Text>
-//                         <Text style={styles.sectionDescription}>
-//                             asdasasd dd fdfg
-//                         </Text>
-//                     </View>
-//                     <View style={styles.sectionContainer}>
-//                         <Text style={styles.sectionTitle}>See Your Changes</Text>
-//                         <Text style={styles.sectionDescription}>
-//                             asdasasd dd fdfg
-//                         </Text>
-//                     </View>
-//
-//
-//
-//                 </View>
-//             </ScrollView>
-//
-//
-//         </Layout>
-//
-//     );
-// };
-//
 
-//
-// export default App;
 
 import React, { Component } from 'react';
 import { View, Text, Image , StyleSheet, ScrollView } from 'react-native';
@@ -75,6 +16,8 @@ import makeInput, {  handleTextInput, withFocus, withErrorIfNeeded } from 'react
 import { compose } from "recompose";
 import isEmpty from "lodash.isempty";
 
+import Layout from "../../partials/layout";
+import Footer from "../../partials/layout/footer";
 import InputTextL from '../../partials/input-text-label';
 import Button from '../../partials/button';
 // import styles from './styles';
@@ -126,7 +69,7 @@ class FormView extends Component {
                         title="Submit"
                     />
                           </ScrollView>
-
+                            <Footer />
 
                          </Layout>
         );

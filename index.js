@@ -1,5 +1,5 @@
 /**
- * @format
+ * Index file
  */
 
 import {AppRegistry} from 'react-native';

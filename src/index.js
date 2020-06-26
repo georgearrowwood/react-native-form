@@ -1,9 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * Launch file
+ * TODO: Implement Router in this file
+ * Now we launch only form module
  */
 
 import React from 'react';
