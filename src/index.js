@@ -8,6 +8,6 @@
 
 import React from 'react';
 
-import Form from "./components/modules/form/";
+import Form from './components/modules/form/';
 
 export default Form;
