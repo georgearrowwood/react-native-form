@@ -5,17 +5,18 @@
  */
 
 import React from "react";
+import "react-native-gesture-handler";
 import { Provider } from "react-redux";
 
 import configureStore from "./store";
-import Form from "./components/modules/form/";
+import Routes from "./routes";
 
 const store = configureStore();
 
 const App = () => {
-  return(
+  return (
     <Provider store={store}>
-      <Form />
+      <Routes />
     </Provider>
   );
 };

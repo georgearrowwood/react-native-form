@@ -3,11 +3,25 @@
  */
 
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.headerBlock}>
+    <Button
+    title="Form"
+    onPress={() => {
+      navigation.navigate('Form');
+    }}
+  />
+  <Button
+  title="About"
+  onPress={() => {
+    navigation.navigate('About');
+  }}
+/>
       <Text style={styles.headerText}>React Native Test App</Text>
     </View>
   );
@@ -16,7 +30,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   headerBlock: {
     width: "100%",
-    height: 50,
+    height: 150,
     paddingTop: 10,
   },
   headerText: {

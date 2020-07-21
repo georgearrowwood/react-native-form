@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import form from "./components/modules/form/reducers";
+import form from "../modules/form/reducers";
 
 const appReducer = combineReducers({
   form
