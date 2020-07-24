@@ -3,21 +3,20 @@
  */
 
 import React from "react";
-import { SafeAreaView, StyleSheet, View, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, View, StatusBar, Text } from "react-native";
+
+// import { Container, Header, Left, Right, Body, Title, Content } from 'native-base';
 
 import Header from "./header";
 
 const Layout: () => React$Node = (props) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+    <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <View style={styles.mainContainer}>
-          <View style={styles.container}>
-            <Header />
+  
+          <Header />
             {props.children}
-          </View>
-        </View>
       </SafeAreaView>
     </>
   );
@@ -25,7 +24,10 @@ const Layout: () => React$Node = (props) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: "100%"
+    width: '100%',
+    height: '100%',
+    borderColor: 'green',
+    borderWidth: 1
   },
   container: {
     flex: 1
