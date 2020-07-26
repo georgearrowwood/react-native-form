@@ -3,32 +3,36 @@ import { connect } from "react-redux";
 import { compose } from "recompose";
 
 import FormView from "./view";
-import { formSubmittedAction } from "./actions";
+import { formSubmitAction } from "./actions";
+import { AppState } from "../../app/reducers";
+
+export interface formValues {
+  name: string,
+  surname: string,
+}
 
 const formikData = {
-  mapPropsToValues: props => {
+  mapPropsToValues: (): formValues => {
     return {
       name: "",
       surname: ""
     };
   },
-  validate: (values, props) => {
-    const errors = {};
+  validate: (values: formValues, props) => {
+    const errors = {} as formValues;
     if (!values.name) errors.name = "Required";
     if (!values.surname) errors.surname = "Required";
 
     return errors;
   },
-  handleSubmit: async (values, { setSubmitting, props }) => {
-    console.log('aaaasssss-------------------', values)
-    await props.formSubmittedAction(true);
+  handleSubmit: async (values: formValues, { setSubmitting, props }) => {
+    await props.formSubmitAction(values);
     setSubmitting(false);
   },
   displayName: "TestForm"
 };
 
-function mapStateToProps(state) {
-  // console.log('p st', state)
+function mapStateToProps(state: AppState) {
   return {
     submitted: state.form.submitted
   };
@@ -37,7 +41,7 @@ function mapStateToProps(state) {
 export default compose(
   connect(
     mapStateToProps,
-    { formSubmittedAction }
+    { formSubmitAction }
   ),
   withFormik(formikData)
 )(FormView);

@@ -27,9 +27,10 @@ const FormView = props => {
     errors,
     submitCount,
     submitted,
+    isSubmitting,
   } = props;
   let errorMessage = props.errorMessage || "";
-
+  console.log('aaaac', props)
   if (!isEmpty(errors) && submitCount) {
     errorMessage = "Enter required fields";
   }
