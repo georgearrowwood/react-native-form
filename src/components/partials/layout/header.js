@@ -12,21 +12,16 @@ const Header = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.headerBlock}>
-    <TouchableOpacity
-    style={styles.menuButton}
-    onPress={() => {
-      navigation.toggleDrawer();
-    }}
-    ><Image
-    style={styles.menuImage}
-    source={MenuIconImage}
-    />
-    
-    </TouchableOpacity>
-    
-    <Text style={styles.headerText}>React Native Test App</Text>
-    <View style={styles.headerRight} />
-    
+      <TouchableOpacity
+        style={styles.menuButton}
+        onPress={() => {
+          navigation.toggleDrawer();
+        }}
+      >
+        <Image style={styles.menuImage} source={MenuIconImage} />
+      </TouchableOpacity>
+      <Text style={styles.headerText}>React Native Test App</Text>
+      <View style={styles.headerRight} />
     </View>
   );
 };
@@ -58,7 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     padding: 6
-  },
+  }
 });
 
 export default Header;

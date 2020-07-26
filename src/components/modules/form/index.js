@@ -1,11 +1,9 @@
-import React, { Component } from "react";
 import { withFormik } from "formik";
 import { connect } from "react-redux";
 import { compose } from "recompose";
 
 import FormView from "./view";
 import { formSubmittedAction } from "./actions";
-
 
 const formikData = {
   mapPropsToValues: props => {
@@ -37,6 +35,9 @@ function mapStateToProps(state) {
 }
 
 export default compose(
-  connect(mapStateToProps, { formSubmittedAction }),
-  withFormik(formikData),
+  connect(
+    mapStateToProps,
+    { formSubmittedAction }
+  ),
+  withFormik(formikData)
 )(FormView);

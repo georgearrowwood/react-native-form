@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-import {View, Text, TextInput, TouchableHighlight} from 'react-native';
+import { View, Text } from "react-native";
 
-import Layout from "../../partials/layout"
+import Layout from "../../partials/layout";
 
 export default () => {
   return (
     <Layout>
       <View>
-        <Text>
-          About
-        </Text>
+        <Text>About</Text>
       </View>
     </Layout>
-  ) 
-}
+  );
+};
