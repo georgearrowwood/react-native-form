@@ -1,47 +1,67 @@
 import React, { Component } from "react";
 
-import {View, Text, TextInput, TouchableHighlight} from 'react-native';
+import {View, Text, TextInput, TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
 
-import Layout from "../../partials/layout"
+import Layout from "../../partials/layout";
+import InputTextLabel from "../../partials/input-text-label";
 
 export default class FormTest extends ValidationComponent {
  
   constructor(props) {
     super(props);
-    this.state = {name : "My name", email: "tibtib@gmail.com", number:"56", date: "2017-03-01"};
+    this.state = {name : "", email: "aa"};
   }
  
   _onPressButton = () => {
     // Call ValidationComponent validate method
     this.validate({
       name: {minlength:3, maxlength:7, required: true},
-      email: {email: true},
-      number: {numbers: true},
-      date: {date: 'YYYY-MM-DD'}
+      email: {email: true, required: true},
+     
     });
+
+    if (this.isFormValid()) {
+      console.log('subm', this.state)
+    } else {
+      console.log('nosubm', this.state)
+    }
   }
  
   render() {
       return (
         <Layout>
-        <View>
-          <TextInput ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <TextInput ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <TextInput ref="number" onChangeText={(number) => this.setState({number})} value={this.state.number} />
-          <TextInput ref="date" onChangeText={(date) => this.setState({date})} value={this.state.date} />
-          {this.isFieldInError('date') && this.getErrorsInField('date').map(errorMessage => <Text>{errorMessage}</Text>) }
- 
-          <TouchableHighlight onPress={this._onPressButton}>
-            <Text>Submit</Text>
-          </TouchableHighlight>
- 
-          <Text>
-            {this.getErrorMessages()}
+        <ScrollView style={styles.scrollView}>
+          <Text>Form</Text>
+          <View style={{borderColor:'red',borderWidth:1}}>
+            <InputTextLabel  reff="name" form={this} label="Name"/>
+            <InputTextLabel  reff="email" form={this} label="Email"/>
+           
+            <Text>
+             {this.getErrorMessages()}
           </Text>
-        </View>
+  
+            <TouchableHighlight onPress={this._onPressButton}>
+              <Text>Submit</Text>
+            </TouchableHighlight>
+ 
+          
+          </View>
+          </ScrollView>
         </Layout>
       );
   }
  
 }
+
+const styles = StyleSheet.create({
+  formInputText: {
+    
+    height: 20,
+    borderColor: 'green',
+    borderWidth: 1
+  },
+  container: {
+    flex: 1
+  }
+});

@@ -10,17 +10,17 @@ export default StyleSheet.create({
   },
 
   label: {
-    color: '#858585',
-    fontWeight: 'bold',
+    color: "#858585",
+    fontWeight: "bold",
     fontSize: 16,
     marginBottom: 2,
   },
   labelError: {
-    color: 'red',
+    color: "red"
   },
 
   textInput: {
-    color: 'black',
+    color: "black",
     borderRadius: 4,
     borderBottomWidth: 0.5,
     borderTopWidth: 0.5,
@@ -33,20 +33,17 @@ export default StyleSheet.create({
     fontSize: 18,
   },
   textInputError: {
-    borderColor: 'red',
-  },   
-  
+    borderColor: 'red'
+  },
+
   inputErrorBox: {
-    backgroundColor: 'red',
+    backgroundColor: "red",
     padding: 5,
     borderRadius: 6,
-    // marginLeft: 15,
-    // marginRight: 15,
     marginTop: 7,
   },
   inputErrorText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
   },
-
-});  
+});

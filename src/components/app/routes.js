@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+// import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Form from "../modules/form/";
 import About from "../modules/about/";
 
-const Stack = createStackNavigator();
-
+const Drawer = createDrawerNavigator();
 const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen name="Form" component={Form} options={{ title: 'Form' }} />
-        <Stack.Screen name="About" component={About} options={{ title: 'About' }} />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="Form">
+        <Drawer.Screen name="Form" component={Form} />
+        <Drawer.Screen name="About" component={About} />
+      </Drawer.Navigator>
+      
     </NavigationContainer>
   );
 };

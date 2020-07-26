@@ -3,40 +3,61 @@
  */
 
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+
+import MenuIconImage from './ham-menu.png';
 
 const Header = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.headerBlock}>
-    <Button
-    title="Form"
+    <TouchableOpacity
+    style={styles.menuButton}
     onPress={() => {
-      navigation.navigate('Form');
+      navigation.toggleDrawer();
     }}
-  />
-  <Button
-  title="About"
-  onPress={() => {
-    navigation.navigate('About');
-  }}
-/>
-      <Text style={styles.headerText}>React Native Test App</Text>
+    ><Image
+    style={styles.menuImage}
+    source={MenuIconImage}
+    />
+    
+    </TouchableOpacity>
+    
+    <Text style={styles.headerText}>React Native Test App</Text>
+    <View style={styles.headerRight} />
+    
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  menuImage: {
+    width: 28,
+    height: 28,
+  },
+  menuButton: {
+    margin: 4,
+  },
+  headerRight: {
+    width: 38,
+    height: 30,
+  },
   headerBlock: {
     width: "100%",
-    height: 150,
+    height: 50,
     paddingTop: 10,
+    paddingLeft: 4,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderColor:'yellow',
+    borderWidth:1
   },
   headerText: {
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
+    padding: 6
   },
 });
 
