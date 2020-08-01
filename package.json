@@ -9,13 +9,15 @@
     "start-reset": "react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint .",
-    "debug": "rndebugger-open --open --port 8081"
+    "debug": "rndebugger-open --open --port 8081",
+    "type": "npx tsc"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^5.7.0",
     "@react-navigation/stack": "^5.7.0",
+    "@types/lodash.isempty": "^4.4.6",
     "@types/react-redux": "^7.1.9",
     "@types/recompose": "^0.30.7",
     "formik": "^2.1.5",
@@ -37,6 +39,7 @@
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@testing-library/jest-native": "^3.1.0",
     "@types/jest": "^26.0.7",
     "@types/react": "^16.9.43",
     "@types/react-native": "^0.63.2",
@@ -46,6 +49,7 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
     "react-native-debugger-open": "^0.3.25",
+    "react-native-testing-library": "^2.1.1",
     "react-test-renderer": "16.11.0",
     "typescript": "^3.9.7"
   },

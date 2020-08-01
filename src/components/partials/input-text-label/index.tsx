@@ -3,8 +3,15 @@ import { View, Text, TextInput } from "react-native";
 
 import styles from "./styles";
 
-const TextInputWithLabel = props => {
-  const { error, containerStyle, inputStyle, focused, label } = props;
+interface TextInputWithLabelProps {
+  name?: string,
+  label?: string,
+  placeholder: string,
+  children?: ReactNode
+}
+
+const TextInputWithLabel: React.FC<TextInputWithLabelProps> = ( props ) => {
+  const { error, containerStyle, inputStyle, focused, label, name, placeholder } = props;
   const inputStyles = [styles.textInput];
   const containerStyles = [styles.container];
   const labelStyles = [styles.label];
@@ -27,7 +34,9 @@ const TextInputWithLabel = props => {
       {!!label && <Text style={labelStyles}>{label}</Text>}
       <TextInput
         style={inputStyles}
-        {...props}
+        name={name}
+        label={label}
+        placeholder={placeholder}
         placeholderTextColor="grey"
         autoCapitalize="none"
       />

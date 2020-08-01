@@ -6,7 +6,6 @@ import React from "react";
 import { Text, ScrollView } from "react-native";
 import {
   handleTextInput,
-  withFocus,
 } from "react-native-formik";
 import { compose } from "recompose";
 import isEmpty from "lodash.isempty";
@@ -18,16 +17,14 @@ import styles from "./styles";
 
 const InputTextLabel = compose(
   handleTextInput,
-  withFocus
 )(InputTextL);
 
-const FormView = props => {
+const FormView = (props: any) => {
   const {
     handleSubmit,
     errors,
     submitCount,
-    submitted,
-    isSubmitting,
+    submitted
   } = props;
   let errorMessage = props.errorMessage || "";
   console.log('aaaac', props)
@@ -37,10 +34,7 @@ const FormView = props => {
 
   return (
     <Layout>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}
-      >
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         {!submitted ? (
           <>
             {!!errorMessage && (

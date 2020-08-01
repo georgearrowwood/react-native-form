@@ -7,7 +7,7 @@ import { SafeAreaView, StatusBar } from "react-native";
 
 import Header from "./header";
 
-const Layout = props => {
+const Layout = (props: any) => {
   return (
     <>
       <StatusBar barStyle="dark-content" />

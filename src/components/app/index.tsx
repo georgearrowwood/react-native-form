@@ -8,6 +8,7 @@ import React from "react";
 import "react-native-gesture-handler";
 import { Provider } from "react-redux";
 
+import "./declare-modules.tsx";
 import configureStore from "./store";
 import Routes from "./routes";
 

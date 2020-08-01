@@ -18,14 +18,14 @@ const formikData = {
       surname: ""
     };
   },
-  validate: (values: formValues, props) => {
+  validate: (values: formValues) => {
     const errors = {} as formValues;
     if (!values.name) errors.name = "Required";
     if (!values.surname) errors.surname = "Required";
 
     return errors;
   },
-  handleSubmit: async (values: formValues, { setSubmitting, props }) => {
+  handleSubmit: async (values: formValues, { setSubmitting, props } : {setSubmitting: any, props: any}) => {
     await props.formSubmitAction(values);
     setSubmitting(false);
   },
