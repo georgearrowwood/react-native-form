@@ -1,7 +1,5 @@
-export default (options) => {
+export default options => {
   return {
-    submitForm: (params) => {
-      
-    }
+    submitForm: params => {}
   };
 };

@@ -20,7 +20,6 @@ const formikData = {
     return errors;
   },
   handleSubmit: async (values, { setSubmitting, props }) => {
-    console.log('aaaasssss-------------------', values)
     await props.formSubmittedAction(true);
     setSubmitting(false);
   },
@@ -28,7 +27,6 @@ const formikData = {
 };
 
 function mapStateToProps(state) {
-  // console.log('p st', state)
   return {
     submitted: state.form.submitted
   };
