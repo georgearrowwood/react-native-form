@@ -1,7 +1,5 @@
 /**
- * Launch file
- * TODO: Implement Router in this file
- * Now we launch only form module
+ * App Main Launch file
  */
 
 import React from "react";
